@@ -34,6 +34,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
 }
 
-function send_email() {
+function send_email(event) {
+  event.preventDefault();
   console.log("Email Successfully Sent");
 }
