@@ -48,9 +48,15 @@ function load_mailbox(mailbox) {
         <h5>Subject: ${singleEmail.subject}</h5>
         <p>${singleEmail.timestamp}</p>
         `;
-
+        
         // Color Change
-        newEmail.className = singleEmail.read ? 'read' : 'unread';
+        // newEmail.className = singleEmail.read ? 'read' : 'unread';
+
+        if (singleEmail.read) {
+          newEmail.style.backgroundColor = 'gray';
+        } else {
+          newEmail.style.backgroundColor = 'white';
+        }
         // Viewing
 
         newEmail.addEventListener('click', function () {
@@ -85,4 +91,8 @@ function send_email(event) {
       load_mailbox('sent');
     });
 
+}
+
+function view_email() {
+  
 }
